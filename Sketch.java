@@ -5,10 +5,12 @@ public class Sketch extends PApplet {
 	
   /**
    * Called once at the beginning of execution, put your size all in this method
+   * Description: Copies the image we need to copy!
+   * Author: @E.Fung
    */
   public void settings() {
 	// put your size call here
-    size(400, 400);
+    size(500, 500);
   }
 
   /** 
@@ -29,35 +31,36 @@ public class Sketch extends PApplet {
     // Q1
     // Vertical Line
     for(int intVerticalLine = 1; intVerticalLine < 10; intVerticalLine++){
-      strokeWeight(1);
+      strokeWeight(2);
       fill(0);
-      line(intVerticalLine * (200 / 10), 0, intVerticalLine * (200 / 10), height / 2);
+      line(intVerticalLine * (width / 20), 0, intVerticalLine * (width / 20), height / 2);
     }
     // Horizontal Line
     for(int intHorizontalLine = 10; intHorizontalLine > 0; intHorizontalLine--){
-      strokeWeight(1);
+      strokeWeight(2);
       fill(0);
-      line(0, intHorizontalLine * (200 / 10), width/2, intHorizontalLine * (200 / 10));
+      line(0, intHorizontalLine * (height / 20), width/2, intHorizontalLine * (height / 20));
     }
 
     // Q2
     for(int intRow = 1; intRow < 6; intRow++){
       for(int intColumn = 1; intColumn < 6; intColumn++){
         fill(255, 0, 0);
-        ellipse((intColumn) * (200 / 6) + 200, intRow * (200 / 6), 22, 22);
+        ellipse((intColumn) * ((width / 2) / 6) + width / 2, intRow * ((height / 2) / 6), width / 16, height / 16);
       }
     }
 
     // Q3
-    for(int intY = 0; intY < 200; intY++){
-      for(int intX = 0; intX < 200; intX++){
-        int intGreyScale =  (int) (1.275 * intX);
+    for(int intY = 0; intY < height / 2; intY++){
+      for(int intX = 0; intX < width / 2; intX++){
+        int intGreyScale =  (int) ((255 / (width / 2)) * intX);
         stroke(intGreyScale);
-        point(intX, intY + 200);
+        point(intX, intY + height / 2);
       }
     }
 
     // Q4    
+    strokeWeight(1);
     for (int intPetalNum = 0; intPetalNum < 8; intPetalNum++){
       fill(255, 180, 0);
       pushMatrix();
@@ -68,7 +71,6 @@ public class Sketch extends PApplet {
       translate ((float) (width / 12), 0);
       ellipse(0, 0, (float)(width / 6), (float)(height / 22));
       popMatrix();
-
     }
     // Middle Circle of FLower
     strokeWeight(0);
