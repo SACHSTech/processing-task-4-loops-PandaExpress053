@@ -26,47 +26,53 @@ public class Sketch extends PApplet {
 	// sample code, delete this stuff
     stroke(0);
     // Q1
-    // for(int x = 1; x < 10; x++){
-    //   strokeWeight(2);
-    //   fill(0);
-    //   line(x * (200 / 10), 0, x * (200 / 10), height / 2);
-    // }
-    // for(int x = 10; x > 0; x--){
-    //   strokeWeight(2);
-    //   fill(0);
-    //   line(0, x * (200 / 10), width/2, x * (200 / 10));
-    // }
+    //Vertical Line
+    for(int intX = 1; intX < 10; intX++){
+      strokeWeight(2);
+      fill(0);
+      line(intX * (200 / 10), 0, intX * (200 / 10), height / 2);
+    }
+    //Horizontal Line
+    for(int x = 10; x > 0; x--){
+      strokeWeight(2);
+      fill(0);
+      line(0, x * (200 / 10), width/2, x * (200 / 10));
+    }
 
-    // //Q2
-    // for(int row = 1; row < 6; row++){
-    //   for(int column = 1; column < 6; column++){
-    //     fill(255, 0, 0);
-    //     ellipse((column) * (200 / 6) + 200, row * (200 / 6), 15, 15);
-    //     //System.out.println(column + " " + row);
-    //   }
-    // }
+    //Q2
+    for(int intRow = 1; intRow < 6; intRow++){
+      for(int intColumn = 1; intColumn < 6; intColumn++){
+        fill(255, 0, 0);
+        ellipse((intColumn) * (200 / 6) + 200, intRow * (200 / 6), 15, 15);
+        //System.out.println(column + " " + row);
+      }
+    }
 
-    // //Q3
-    // for(int y = 0; y < 200; y++){
-    //   for(int x = 0; x < 200; x++){
-    //     int greyscale =  (int) (1.275 * x);
-    //     stroke(greyscale);
-    //     point(x, y + 200);
-    //   }
-    // }
-    //Q4
-    fill(0, 200, 0);
+    //Q3
+    for(int intY = 0; intY < 200; intY++){
+      for(int intX = 0; intX < 200; intX++){
+        int intGreyScale =  (int) (1.275 * intX);
+        stroke(intGreyScale);
+        point(intX, intY + 200);
+      }
+    }
     
-    double radius = 1;
-    for (int i = 0; i < 8; i++){
-      fill(100, 25, 100);
+    //Q4    
+    for (int intPetalNum = 0; intPetalNum < 8; intPetalNum++){
+      fill(255, 180, 0);
       pushMatrix();
       translate(width * 0.75f, height * 0.75f);
-      rotate(i * (HALF_PI / 2));
-      ellipse((float) (radius * Math.cos(i * (HALF_PI / 2))), (float) (radius  * Math.sin(i * (HALF_PI / 2))), 100.0f, 30.0f);
+
+      //Rotates in a circle
+      rotate(-intPetalNum * (PI / 4));
+      translate ((float) (width / 12), 0);
+      ellipse(0, 0, (float)(width / 6), (float)(height / 22));
       popMatrix();
+
     }
-    ellipse(300, 300, 30, 30);
+    strokeWeight(0);
+    fill(32, 92, 34);
+    ellipse(width * 0.75f, height * 0.75f, 30, 30);
   }
   
   // define other methods down here.
