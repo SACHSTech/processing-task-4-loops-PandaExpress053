@@ -6,7 +6,7 @@ public class Sketch extends PApplet {
   /**
    * Called once at the beginning of execution, put your size all in this method
    * Description: Copies the image we need to copy!
-   * Author: @E.Fung
+   * @author: E.Fung
    */
   public void settings() {
 	// put your size call here
@@ -53,7 +53,7 @@ public class Sketch extends PApplet {
     // Q3
     for(int intY = 0; intY < height / 2; intY++){
       for(int intX = 0; intX < width / 2; intX++){
-        int intGreyScale =  (int) ((255 / (width / 2)) * intX);
+        int intGreyScale =  (int) ((255.0 / (width / 2.0)) * intX);
         stroke(intGreyScale);
         point(intX, intY + height / 2);
       }
@@ -75,6 +75,6 @@ public class Sketch extends PApplet {
     // Middle Circle of FLower
     strokeWeight(0);
     fill(32, 92, 34);
-    ellipse(width * 0.75f, height * 0.75f, 30, 30);
+    ellipse(width * 0.75f, height * 0.75f, width / 15, height / 15);
   }
 }
