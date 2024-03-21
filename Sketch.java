@@ -60,7 +60,7 @@ public class Sketch extends PApplet {
     }
 
     // Q4    
-    strokeWeight(1);
+    strokeWeight(0);
     for (int intPetalNum = 0; intPetalNum < 8; intPetalNum++){
       fill(255, 180, 0);
       pushMatrix();
